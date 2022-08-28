@@ -1,0 +1,3 @@
+{
+  "ignorePatterns": ["{{cookiecutter.repo_name}}"]
+}

@@ -1,0 +1,10 @@
+{
+    "plugin_name": "some_plugin",
+    "plugin_slug": "{{ cookiecutter.plugin_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "plugin_short_description": "Some short description",
+    "repo_name": "{{ cookiecutter.plugin_name.lower().replace(' ', '_') }}",
+    "work_over_ssh_or_https": ["ssh", "https"],
+    "github_username": "bergercookie",
+    "full_name": "Nikos Koukis",
+    "create_author_file": "y"
+}

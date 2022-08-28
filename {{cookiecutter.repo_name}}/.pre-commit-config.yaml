@@ -1,0 +1,37 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v3.2.0"
+    hooks:
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        # no svg files yet in the repo.
+        # exclude: ".*svg"
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+      # - id: check-symlinks
+      # - id: pretty-format-json
+      # - id: sort-simple-yaml
+  - repo: https://github.com/tcort/markdown-link-check
+    rev: "96dcdf3"
+    hooks:
+      # https://github.com/tcort/markdown-link-check#config-file-format
+      - id: markdown-link-check
+        args: ["--config", ".markdown-link-check.json"]
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: "d9646f3"
+    hooks:
+      - id: markdownlint
+        entry: mdl -r ~MD033,~MD013
+        exclude: ^.github/
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: "0731985"
+    hooks:
+      - id: check-github-workflows
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
