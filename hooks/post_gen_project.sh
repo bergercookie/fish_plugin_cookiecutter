@@ -6,10 +6,10 @@ work_over_ssh_or_https="{{ cookiecutter.work_over_ssh_or_https }}"
 
 if [[ "$work_over_ssh_or_https" == "ssh" ]]
 then
-    prefix="ssh://git@github.com:"
+    prefix="ssh://git@"
 elif [[ "$work_over_ssh_or_https" == "https" ]]
 then
-    prefix="https://github.com/"
+    prefix="https://"
 else
     return 1
 fi
@@ -21,7 +21,7 @@ echo "Initializing the newly created repo"
 echo "PWD=$PWD"
 git init
 
-origin_path="$prefix$github_username/$repo_name"
+origin_path="${prefix}github.com/$github_username/$repo_name"
 echo "Setting remote origin -> $origin_path"
 git remote add origin $origin_path
 
