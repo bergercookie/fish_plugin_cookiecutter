@@ -28,7 +28,7 @@ jobs:
 
       - name: Create package from template, make sure pre-commit succeeds off the bat
         run: |
-          cookiecutter . --no-input -o output
-          cd output
+          cookiecutter . --no-input -o .
+          cd some_plugin
           git add -A
           SKIP=markdown-link-check pre-commit run --all-files
